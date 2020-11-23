@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///editor.scss"],"names":[],"mappings":"AAAA;EACE,eAAe,EAAE","file":"index.css","sourcesContent":[".cwp_title_wrapper {\n  cursor: pointer; }\n"],"sourceRoot":""}

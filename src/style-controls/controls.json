@@ -1,0 +1,109 @@
+{
+
+	"titleTypography":{
+        "target": "accordion_title",
+        "responsive": true,
+        "hover": true,
+        "options": [
+            {
+            "label":    "",
+            "control":  "Typography",
+            "attribute": "titleTypography",
+            "defaults": {
+                "desktop": {
+                    "text-color": "#1e1e1e",
+                    "font-size": "17px"
+                }
+              }
+            }
+        ]
+	},
+	
+	"titleBackground":{
+        "target": "cwp_title_wrapper",
+        "responsive": true,
+        "hover": true,
+        "options": [
+            {
+            "label":    "Background",
+            "control":  "Background",
+            "attribute": "titleBackground",
+			"defaults": {
+				"desktop": {
+				  "solid": "#ff0000"
+				}
+			  }
+			}
+        ]
+    },
+
+	"titleHoverBackground":{
+        "target": "cwp_title_wrapper:hover",
+        "responsive": true,
+        "hover": true,
+        "options": [
+            {
+            "label":    "Active Background",
+            "control":  "Background",
+			"attribute": "titleHoverBackground",
+			"defaults": {
+				"desktop": {
+				  "solid": "#007cba"
+				}
+			  }
+            }
+        ]
+	},
+
+	"titlePadding":{
+        "target": "cwp_title_wrapper",
+        "responsive": true,
+        "hover": true,
+        "options": [
+            {
+            "label":    "Padding",
+            "control":  "Dimensions",
+			"attribute": "titlePadding",
+			"css": "padding",
+			"defaults": {
+				"desktop": "10px"
+			  }
+            }
+        ]
+	},
+	
+	"contentBackground":{
+        "target": "cwp_content_wrapper",
+        "responsive": true,
+        "hover": true,
+        "options": [
+            {
+            "label":    "Background",
+            "control":  "Background",
+			"attribute": "contentBackground",
+			"defaults": {
+				"desktop": {
+				  "solid": "#f5f5f5"
+				}
+			  }
+            }
+        ]
+	},
+
+	"contentPadding":{
+        "target": "cwp_content_wrapper",
+        "responsive": true,
+        "hover": true,
+        "options": [
+            {
+            "label":    "Padding",
+            "control":  "Dimensions",
+			"attribute": "contentPadding",
+			"css": "padding",
+			"defaults": {
+				"desktop": "10px"
+			  }
+            }
+        ]
+	}
+}
