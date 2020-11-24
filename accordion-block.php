@@ -29,8 +29,8 @@ function create_block_accordion_block_block_init() {
 	$index_js     = 'build/index.js';
 	$script_asset = require( $script_asset_path );
 	
-	$script_asset['dependencies'][] = '';
-	
+	$script_asset[ 'dependencies'][] = 'editor_plus-plugin-script';
+
 	wp_register_script(
 		'create-block-accordion-block-block-editor',
 		plugins_url( $index_js, __FILE__ ),
@@ -45,7 +45,7 @@ function create_block_accordion_block_block_init() {
 		'initial'
 	);
 
-	wp_set_script_translations( 'create-block-accordion-block-block-editor', 'accordion-block' );
+	wp_set_script_translations( 'create-block-accordion-block-block-editor', 'accordion-block');
 
 	$editor_css = 'build/index.css';
 	wp_register_style(

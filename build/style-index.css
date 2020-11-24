@@ -16,8 +16,8 @@
   margin-top: 0 !important;
   margin-bottom: 0 !important; }
 
-.cwp_content_wrapper:not(.cwp_display) {
-  display: none; }
+.cwp_accordion_wrapper .wp-block-create-block-accordion-item {
+  margin-bottom: 10px; }
 
 
 /*# sourceMappingURL=style-index.css.map*/

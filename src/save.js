@@ -4,9 +4,11 @@ const { RenderSavedStyles } = editorPlus.components;
 
 
  function save(props) {
+	const {id} = props.attributes;
+	console.log('parent id', id);
 	return (
-		<div className={props.attributes.id}>
-			<div className="cwp_accordion_wrapper">
+		<div className={id}>
+			<div className="cwp_accordion_wrapper" data-id={id}>
 			<InnerBlocks.Content/>
 			<RenderSavedStyles {...props}/>
 			</div>

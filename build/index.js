@@ -630,10 +630,13 @@ __webpack_require__.r(__webpack_exports__);
 var RenderSavedStyles = editorPlus.components.RenderSavedStyles;
 
 function save(props) {
+  var id = props.attributes.id;
+  console.log('parent id', id);
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: props.attributes.id
+    className: id
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: "cwp_accordion_wrapper"
+    className: "cwp_accordion_wrapper",
+    "data-id": id
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InnerBlocks"].Content, null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RenderSavedStyles, props)));
 }
 
