@@ -1,5 +1,14 @@
 .cwp_title_wrapper {
   cursor: pointer; }
 
+.cwp_title_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.editor-styles-wrapper p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important; }
+
 
 /*# sourceMappingURL=index.css.map*/

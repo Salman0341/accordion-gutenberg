@@ -9,9 +9,8 @@ function EditChild(props) {
     const { clientId } = props;
 	const wrapperClass = 'ep__fb_wrapper_' + clientId;
     const { id, accordionTitle, isOpen } = props.attributes;
-	const rootOpen = props.rootBlock.attributes.openOneAtTime;
 
-	useEffect(props.toggleSiblings, [isOpen])
+	useEffect(props.toggleSiblings, [isOpen]);
 
 	props.setAttributes({
 		id: wrapperClass
@@ -33,14 +32,11 @@ function EditChild(props) {
 							onChange={(newAccordionTitle) => props.setAttributes({ accordionTitle: newAccordionTitle })}
 						/>
 					</span>
-					<div className="cwp_icon" />
+					{isOpen ? <span class="dashicons dashicons-minus"></span> : <span class="dashicons dashicons-plus"></span>}
+
 				</div>
 				{isOpen && <div className="cwp_content_wrapper">
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-						labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-						laboris nisi ut aliquip ex ea commodo consequat.
-					</p>
+					<p> Accordion Content </p>
 				</div>}
 			</div>
 		</div>
@@ -48,37 +44,37 @@ function EditChild(props) {
 }
 
 export default compose([
-	withSelect((select, { clientId }) => {
-		const { getBlockRootClientId, getBlock } = select('core/block-editor');
-		const rootClientId = getBlockRootClientId( clientId );
-		const rootBlock = getBlock( rootClientId );
-		
-		return {
+  withSelect((select, {clientId} ) => {
+	const { getBlock , getBlockRootClientId } = select('core/block-editor');
+	
+	const rootClientId = getBlockRootClientId(clientId);
+	const rootBlock = getBlock(rootClientId);
 
-			rootBlock
-		}
-	}),
-	withDispatch((dispatch, { clientId, rootBlock, attributes }) => {
 
-		const { updateBlockAttributes } = dispatch('core/block-editor');
+	return {
+      rootBlock
+	}
+  }),
 
-		return {
-			toggleSiblings() {
-				const { isOpen } = attributes;
-				if (rootBlock.attributes.openOneAtTime) {
-					
-					rootBlock.innerBlocks.forEach(( childBlock ) => {
+  withDispatch((dispatch, {clientId, rootBlock, attributes}) => {
+	const { updateBlockAttributes } = dispatch('core/block-editor');
+	 
+	return {
+	  
+		toggleSiblings() {
+			const { isOpen } =  attributes;
+			if(rootBlock.attributes.openOneAtTime) {
 
-						if (childBlock.clientId !== clientId && isOpen) {
+                 rootBlock.innerBlocks.forEach((childBlock) => {
+                    if( childBlock.clientId !== clientId && isOpen) {
+                        updateBlockAttributes(childBlock.clientId, {isOpen: false} );
+					}
+			   })
+			}
+		  }
+	}
+  })
 
-							updateBlockAttributes(childBlock.clientId, { isOpen: false });
-						}	
-					})
-				}
-			}  
-		}
-
-	})
 ]) (EditChild);
 
 

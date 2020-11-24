@@ -162,14 +162,12 @@ export default compose([
                  
 				if (typeof currentBlock.innerBlocks === 'undefined') return;
 				
-				currentBlock.innerBlocks.forEach(( childBlock => {
+				currentBlock.innerBlocks.forEach(( childBlock ) => {
 
 					updateBlockAttributes(childBlock.clientId, { isOpen: false });
 
-				}));
-
+				})
 			}
 		}
-
 	})
 ])(Edit);

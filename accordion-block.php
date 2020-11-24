@@ -28,12 +28,23 @@ function create_block_accordion_block_block_init() {
 	}
 	$index_js     = 'build/index.js';
 	$script_asset = require( $script_asset_path );
+	
+	$script_asset['dependencies'][] = '';
+	
 	wp_register_script(
 		'create-block-accordion-block-block-editor',
 		plugins_url( $index_js, __FILE__ ),
 		$script_asset['dependencies'],
 		$script_asset['version']
 	);
+
+	wp_register_script(
+		'accordion-script',
+		plugins_url( 'assets/accordion.js', __FILE__ ),
+		['jquery'],
+		'initial'
+	);
+
 	wp_set_script_translations( 'create-block-accordion-block-block-editor', 'accordion-block' );
 
 	$editor_css = 'build/index.css';
@@ -56,6 +67,8 @@ function create_block_accordion_block_block_init() {
 		'editor_script' => 'create-block-accordion-block-block-editor',
 		'editor_style'  => 'create-block-accordion-block-block-editor',
 		'style'         => 'create-block-accordion-block-block',
-	) );
+		'script'		=> 'accordion-script'
+	));
+
 }
 add_action( 'init', 'create_block_accordion_block_block_init' );

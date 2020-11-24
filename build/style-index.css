@@ -4,10 +4,20 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-.wp-block-create-block-accordion-block {
-  background-color: var(--wp-admin-theme-color);
-  color: #fff;
-  padding: 2px; }
+.cwp_title_wrapper {
+  cursor: pointer; }
+
+.cwp_title_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.editor-styles-wrapper p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important; }
+
+.cwp_content_wrapper:not(.cwp_display) {
+  display: none; }
 
 
 /*# sourceMappingURL=style-index.css.map*/

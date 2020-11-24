@@ -6,6 +6,7 @@ import './style.scss';
 import Edit from './edit';
 import save from './save';
 import EditChild from './child/edit-child';
+import saveChild from './child/save-child';
 
 import controls from './style-controls/controls.json';
 
@@ -102,6 +103,6 @@ registerBlockType( 'create-block/accordion-item', {
 	},
 
 	edit: EditChild,
-	save: () => <h1>Hello World Save</h1>,
+	save: saveChild,
 	parents: [ 'create-block/accordion-block' ]
 });
