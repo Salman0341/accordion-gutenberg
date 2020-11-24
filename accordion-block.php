@@ -63,12 +63,19 @@ function create_block_accordion_block_block_init() {
 		filemtime( "$dir/$style_css" )
 	);
 
-	register_block_type( 'create-block/accordion-block', array(
+	$block_assets = array(
 		'editor_script' => 'create-block-accordion-block-block-editor',
 		'editor_style'  => 'create-block-accordion-block-block-editor',
 		'style'         => 'create-block-accordion-block-block',
 		'script'		=> 'accordion-script'
-	));
+	);
+
+
+	if ( is_admin() ) {
+		unset($block_assets['script']);
+	}
+
+	register_block_type( 'create-block/accordion-block', $block_assets);
 
 }
 add_action( 'init', 'create_block_accordion_block_block_init' );

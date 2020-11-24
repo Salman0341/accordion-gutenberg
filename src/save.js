@@ -4,11 +4,11 @@ const { RenderSavedStyles } = editorPlus.components;
 
 
  function save(props) {
-	const {id} = props.attributes;
-	console.log('parent id', id);
+	const {id, openOneAtTime } = props.attributes;
+	console.log('Open ', openOneAtTime);
 	return (
 		<div className={id}>
-			<div className="cwp_accordion_wrapper" data-id={id}>
+			<div className="cwp_accordion_wrapper" data-open={openOneAtTime}>
 			<InnerBlocks.Content/>
 			<RenderSavedStyles {...props}/>
 			</div>

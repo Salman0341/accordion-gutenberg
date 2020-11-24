@@ -11,9 +11,9 @@ function saveChild(props) {
 							__html: accordionTitle
 						}}
 					/>
-					<span class="dashicons dashicons-plus" />
+					<span class="dashicons dashicons-plus"></span>
 				</div>
-				<div class="cwp_content_wrapper">
+				<div class="cwp_content_wrapper cwp_display">
 					<p> Accordion Content </p>
 				</div>
 			</div>

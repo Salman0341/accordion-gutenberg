@@ -310,7 +310,7 @@ function saveChild(props) {
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
     class: "dashicons dashicons-plus"
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    class: "cwp_content_wrapper"
+    class: "cwp_content_wrapper cwp_display"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, " Accordion Content "))));
 }
 
@@ -630,13 +630,15 @@ __webpack_require__.r(__webpack_exports__);
 var RenderSavedStyles = editorPlus.components.RenderSavedStyles;
 
 function save(props) {
-  var id = props.attributes.id;
-  console.log('parent id', id);
+  var _props$attributes = props.attributes,
+      id = _props$attributes.id,
+      openOneAtTime = _props$attributes.openOneAtTime;
+  console.log('Open ', openOneAtTime);
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: id
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "cwp_accordion_wrapper",
-    "data-id": id
+    "data-open": openOneAtTime
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InnerBlocks"].Content, null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RenderSavedStyles, props)));
 }
 
